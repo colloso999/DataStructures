@@ -12,6 +12,7 @@ int main(void)
   int value = 3; /*new data element to be inserted*/
 
   printf("Print array before insertion -\n");
+
   for (i = 0; i < N; i++)
   {
     printf("arr[%d] = %d\n", i, arr[i]);
