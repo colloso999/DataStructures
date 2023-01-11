@@ -24,6 +24,7 @@ while(j >= k)
 
 LA[k] = item;
 
+n++;
 
 printf("The array of elements after insertion :\n");
 
