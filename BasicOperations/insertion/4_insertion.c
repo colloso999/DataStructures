@@ -2,6 +2,14 @@
 
 #define MAX 5
 
+/**
+ * in this scenario we are given a location (index)
+ * of an array which a new data element (value) has to inserted
+ * 
+ * we seek till index-1 i.e., one location ahead of the given
+ * index
+*/ 
+
 int main(void)
 {
   int array[MAX] = {1, 2, 4, 5};
