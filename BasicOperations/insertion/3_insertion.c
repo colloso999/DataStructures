@@ -2,6 +2,13 @@
 
 #define MAX 5
 
+/**
+ * in this scenario we are given a location
+ * (index) of an array after which a new data element
+ * (value) has to be inserted
+ * only seek process varies
+*/
+
 int main(void)
 {
   int arr[MAX] = {1, 2, 4, 5};
@@ -10,6 +17,7 @@ int main(void)
   int N = 4;     /*number of elements in array*/
   int index = 1; /*index location after which value will be inserted*/
   int value = 3; /*new data element to be inserted*/
+  int pos = 3;     /*position location*/
 
   printf("Print array before insertion -\n");
 
@@ -19,13 +27,13 @@ int main(void)
   }
 
   /*now shift rest of the elements downwards*/
-  for (i = N; i >= index + 1; i--)
+  for (i = N -1; i >= pos - 1; i--)
   {
     arr[i + 1] = arr[i];
   }
 
   /*add new element at first position*/
-  arr[1 + index] = value;
+  arr[pos - 1] = value;
 
   /*increase N to reflect number of elements*/
   N++;
