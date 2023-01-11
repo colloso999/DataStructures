@@ -30,6 +30,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
          *  when it gets inserted into the list
          */
         new_node->n = n;
+        /* used in the case where the new node needs to be inserted at the front of the linked list */
         new_node->next = *head;
         *head = new_node;
         return (new_node);
@@ -49,6 +50,18 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
         return (NULL);
     }
     new_node->n = n;
+    /**
+     * new_node is a pointer to the new_noode that was created and initialized with the given value
+     * it is setting the next member of the new node to the current head of the list which is stored
+     * in the memory location pointed to by the head
+     * current is a pointer to the node before the desired position where the 
+     * new node needs to be inserted
+     * It is setting the 'next' member variable of the new node to the 'next' member variable of current
+     * node, which is stored in the memory location pointed to by 'current->next'.
+     * This is neccessary because it is needed to insert the new node at a specific point within the list
+     * ,so that the new node is between current node and the next node and current node's  next pointer
+     * will point to the new node
+     */
     new_node->next = current->next;
     current->next = new_node;
     return (new_node);
